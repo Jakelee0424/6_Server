@@ -1,0 +1,10 @@
+package edu.kh.servlet.controller;
+
+import javax.servlet.http.HttpServlet;
+// 톰캣에 저장
+
+public class ExampleController1 extends HttpServlet{
+
+	
+	
+}
