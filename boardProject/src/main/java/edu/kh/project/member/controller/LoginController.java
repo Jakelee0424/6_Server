@@ -49,6 +49,15 @@ public class LoginController extends HttpServlet{
 				
 			}else{
 				
+				// 로그인 실패시 메시지를 session에 추가
+				session.setAttribute("msg", "아이디 또는 비밀번호가 일치하지 않습니다.");
+				
+				// 현재 요청 이전 페이지로 redirect
+				String referer = req.getHeader("referer");
+				// referer = 각 페이지 방문시 남는 흔적
+				// requeset.getHeader() : 안에 파라미터로 referer 전달시 이전페이지 주소값 반환
+				
+				resp.sendRedirect(referer);
 			}
 			
 		}catch(Exception e) {

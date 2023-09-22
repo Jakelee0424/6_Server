@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import edu.kh.project.model.dto.Member;
@@ -80,6 +82,38 @@ public class MemberDAO {
 		return member;
 		
 		
+	}
+
+
+	public List<Member> searchUser(Connection conn, String query) throws Exception{
+		List<Member> list = new ArrayList<Member>();
+		
+		try {
+			
+			String sql = prop.getProperty("searchUser");
+			
+			pstmt=conn.prepareStatement(sql);
+			
+			pstmt.setString(1, query);
+						
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				
+				String memberNickname = rs.getString("MEMBER_NICKNAME");
+				String memberEmail = rs.getString("MEMBER_EMAIL");
+				String memberTel = rs.getString("MEMBER_TEL");
+				
+				list.add( new Member(memberNickname, memberEmail, memberTel));
+				
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return list;
 	}
 
 	

@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<link rel="stylesheet" href="/resources/css/main-style.css" type="text/css">
+	
+
+
 	<header>
 
 		<section>
@@ -11,18 +15,23 @@
 		<section>
 			<section class="search-area">
 
-				<form action="#" name="search-form">
+					<form action="/search" name="search-form" method="get">
+						
 
-					<fieldset>
-						<input type="search" id="query" name="query" autocomplete="off"
+						<fieldset>
+							<input type="search" id="query" name="query" autocomplete="off"
 							placeholder="검색어를 입력하세요">
-
-						<button id="searchBtn" class="fa-solid fa-magnifying-glass"></button>
-					</fieldset>
-
-				</form>
-
-			</section>
+							
+							<button id="searchBtn" class="fa-solid fa-magnifying-glass"></button>
+						</fieldset>
+						
+						
+					</form>
+					
+					
+					
+					
+				</section>
 		</section>
 
 		<section></section>
@@ -39,3 +48,8 @@
 			<li><a href="#">1:1문의</a></li>
 		</ul>
 	</nav>
+
+
+
+
+

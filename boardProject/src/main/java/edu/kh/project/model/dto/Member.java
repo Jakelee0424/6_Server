@@ -26,5 +26,11 @@ public class Member {
 	private String memberDeleteFlag;
 	private int authority;
 	
+	public Member(String memberNickname, String memberEmail,  String memberTel) {
+		this.memberEmail = memberEmail;
+		this.memberNickname = memberNickname;
+		this.memberTel = memberTel;
+	}
 	
+
 }

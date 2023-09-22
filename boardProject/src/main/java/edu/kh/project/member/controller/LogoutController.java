@@ -1,4 +1,4 @@
-package edu.kh.servlet.controller;
+package edu.kh.project.member.controller;
 
 import java.io.IOException;
 
@@ -7,25 +7,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-/*
- * 
- * @WebServlet 어노테이션
- * -> 해당 클래스를 Servlet으로 등록하고 
- * 	  매핑할 주소를 연결하라고 지시하는 어노테이션 
- * 
- * */
-
-@WebServlet("/example2")
-public class ExampleController2 extends HttpServlet{
+@WebServlet("/member/logout")
+public class LogoutController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-	
-	
+		//Httpsession을 얻어와
+		HttpSession session = req.getSession();
 		
+		//session을 무효화 하고
+		session.invalidate();
+		
+		// 메인 페이지를 재요청
+		resp.sendRedirect("/");
+		
+	
 	}
 	
-
 }

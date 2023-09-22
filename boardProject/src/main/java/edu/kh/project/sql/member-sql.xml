@@ -12,6 +12,12 @@
 	</entry>
 	
 
+	<entry key="searchUser">
+		SELECT MEMBER_NICKNAME, MEMBER_EMAIL, MEMBER_TEL
+		FROM "MEMBER"
+		WHERE MEMBER_NICKNAME LIKE '%' || ? || '%'
+	</entry>
+
 </properties>
 
 

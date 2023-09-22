@@ -1,9 +1,0 @@
-package edu.kh.servlet.controller;
-
-import javax.servlet.http.HttpServlet;
-
-public class ExampleController1 extends HttpServlet{
-
-	
-	
-}
