@@ -30,4 +30,51 @@ public class TodoService {
 		return list;
 	}
 
+	/** 투두 등록 서비스
+	 * @param todoTitle
+	 * @param todoMemo
+	 * @param memberNo 
+	 * @return
+	 */
+	public int insert(String todoTitle, String todoMemo, int memberNo) throws Exception{
+		
+		int result = 0;
+		
+		Connection conn = getConnection();
+		
+		result = dao.insert(conn, todoTitle, todoMemo, memberNo);
+		
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	}
+
+	
+	/** 투두 삭제 서비스
+	 * @return
+	 */
+	public int delete() throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.delete(conn); 
+		
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+
+		close(conn);
+		
+		return result;
+	}
+
 }
+

@@ -1,6 +1,4 @@
 INDEX VERSION 1.134
-C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3520901578.index
-\toDoList\src\main\java
 C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1267764227.index
 \boardProject\src\main\java
 C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2210145245.index
@@ -9,16 +7,10 @@ C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3765
 \JSPProject1\src\main\java
 C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2906625539.index
 \boardProject\src\main\java
-C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\210231301.index
-\toDoList\src\main\java
 C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3977689548.index
 \JSPProject2\src\main\java
-C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2158338909.index
-\toDoList2\src\main\java
 C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2186370130.index
 \JSPProject2\src\main\java
-C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\992018759.index
-\toDoList2\src\main\java
 C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1040642209.index
 \boardProject\src\main\java
 C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1497572105.index
@@ -27,7 +19,5 @@ C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3599
 \todoList\src\main\java
 C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3955742525.index
 \JSPProject2\src\main\java
-C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2619649275.index
-\toDoList\src\main\java
 C:\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2092188220.index
 \JSPProject2\src\main\java

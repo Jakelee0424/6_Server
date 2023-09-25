@@ -62,7 +62,7 @@ public class TodoDAO {
 				String todoDate = rs.getString("TODO_DATE");
 				String todoDelFlag = rs.getString("TODO_DEL_FL");
 
-				list.add( new Todo(todoNo, todoTitle, todoMemo, todoDate, todoDelFlag, memberNo ));
+				list.add( new Todo(todoNo, todoTitle, todoMemo, todoDate, todoDelFlag, memberNo));
 			}
 			
 		}finally {
@@ -76,4 +76,57 @@ public class TodoDAO {
 
 	
 	
+	/** 투두 등록 DAO
+	 * @param conn
+	 * @param todoTitle
+	 * @param todoMemo
+	 * @param memberNo 
+	 * @return
+	 */
+	public int insert(Connection conn, String todoTitle, String todoMemo, int memberNo) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("insert");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, todoTitle);
+			pstmt.setString(2, todoMemo);
+			pstmt.setInt(3, memberNo);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+			
+		}
+		return result;
+	}
+
+	/** 투두 삭제 DAO
+	 * @param conn
+	 * @return
+	 */
+	public int delete(Connection conn) {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("delete");
+			
+			
+		}finally {
+			
+		}
+		
+		return 0;
+	}
+	
 }
+

@@ -56,7 +56,7 @@
 
 		<c:otherwise>
 
-			<p id="todoTitle">${member.memberNickname}의 투두 리스트</p>
+			<p id="todolistTitle">${member.memberNickname}의 투두 리스트</p>
 
 			<span>
 				

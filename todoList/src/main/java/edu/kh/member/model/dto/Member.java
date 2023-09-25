@@ -19,4 +19,6 @@ public class Member {
 	private String memberNickname;
 	private String enrollDate;
 	private String memberDelFlag;
+		
+	
 }

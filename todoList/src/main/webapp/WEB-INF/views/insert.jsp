@@ -1,38 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-        <!DOCTYPE html>
-        <html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
 
-        <head>
-            <meta charset="UTF-8">
-            <title>Insert todo</title>
+<head>
+<meta charset="UTF-8">
+<title>Insert todo</title>
 
-            <link rel="stylesheet" href="/resources/css/main.css">
-        </head>
+<link rel="stylesheet" href="/resources/css/main.css">
+</head>
 
-        <body>
+<body>
 
-            <p>To do 등록하기</p>
+	<c:if test="${not empty sessionScope.msg}">
 
-            <form action="">
+		<script>
+			alert('${msg}')
+		</script>
 
-                <fieldset>
-                    
-                    <p>제목</p>
-                    <input type="text" name="todoTitle" id="todoTitle">
+		<c:remove var="msg" scope="session" />
 
-                    <p>메모</p>
-                    <input type="text" name="todoMemo" id="todoMemo">
-                    
-                    
-                </fieldset>
-            
-                
-                <button>등록하기</button>
-
-            </form>
+	</c:if>
 
 
-        </body>
+	<p class="insertTitle">To do 등록하기</p>
 
-        </html>
+	<form action="/insert" method="post">
+
+		<fieldset class="insertContainer">
+
+			<p>제목</p>
+			<input type="text" name="todoTitle" id="todoTitle">
+
+			<p>메모</p>
+			<textarea name="todoMemo" id="todoMemo" cols="30" rows="10"></textarea>
+
+			<button class="insertBtn">등록하기</button>
+		</fieldset>
+
+
+
+	</form>
+
+
+</body>
+
+</html>
