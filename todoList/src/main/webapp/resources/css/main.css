@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    font-family: "Gowun Dodum";
+    font-weight: bold;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginContainer{
+    width: 12em;
+    height: 17em;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    padding: 5px;
+    height: 30px;
+}
+
+.loginBtn{
+    width: 80px;
+    height: 30px;
+    margin: 30px 0;
+    color: #fff;
+    background-color: #000;
+    cursor: pointer;
+    border: none;
+}
+
+.loginBtn:hover{
+    color: #000;
+    background-color: #cbcbcb;
+    transition-duration: 0.5s;
+}
+
+/*----------------------- signup -----------------------------*/
+
+.signupTitle{
+    font-size: 2em;
+}
+
+#explainId{
+    font-size: 0.3em;
+}
+
+.signupBtn{
+    width: 80px;
+    height: 30px;
+    margin: 30px 0;
+    color: #fff;
+    background-color: #000;
+    cursor: pointer;
+    border: none;
+
+    align-self: center;
+}
+
+.signupBtn:hover{
+    color: #000;
+    background-color: #cbcbcb;
+    transition-duration: 0.5s;
+}
+
+.signupContainer{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin-top: 30px;
+}
+
+.signupContainer > p:not(:nth-of-type(2)) {
+    margin-top: 20px;
+} 
+
+/* ---------------- 로그인 후 ---------------------------- */
+
+#todoTitle{
+    margin-bottom: 20px;
+}
+
+.todo-div{
+    font-size: 10px;
+}
+
+.btn{
+    font-size: 10px;
+
+    display: flex;
+    margin: 20px 0;
+}
+
+#insertBtn{
+    width: 40px;
+    height: 20px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    margin: 0 5px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+#logoutBtn{
+    width: 40px;
+    height: 20px;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    margin: 0 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+#updateBtn{
+    font-size: 10px;
+    border: none;
+    padding: 3px;
+    background-color: rgb(70, 70, 255);
+    color: white;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+#deleteBtn{
+    font-size: 10px;
+    border: none;
+    padding: 3px;
+    background-color: rgb(252, 71, 71);
+    color: white;
+    text-decoration: none;
+    border-radius: 2px;
+}
