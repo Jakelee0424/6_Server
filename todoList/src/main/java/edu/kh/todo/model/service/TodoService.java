@@ -55,15 +55,15 @@ public class TodoService {
 		return result;
 	}
 
-	
 	/** 투두 삭제 서비스
+	 * @param todoNo 
 	 * @return
 	 */
-	public int delete() throws Exception{
+	public int delete(int todoNo) throws Exception{
 		
 		Connection conn = getConnection();
 		
-		int result = dao.delete(conn); 
+		int result = dao.delete(conn, todoNo); 
 		
 		if(result > 0) {
 			commit(conn);
@@ -74,6 +74,57 @@ public class TodoService {
 		close(conn);
 		
 		return result;
+	}
+
+	/** 투두 수정 서비스
+	 * @param todoTitle
+	 * @param todoMemo
+	 * @param memberNo
+	 * @param todoNo 
+	 * @param todoNo 
+	 * @return
+	 */
+	public int update(String todoTitle, String todoMemo, int memberNo, int todoNo) throws Exception{
+	
+		int result = 0;
+		
+		Connection conn = getConnection();
+		
+		result = dao.update(conn, todoTitle, todoMemo, memberNo, todoNo);
+		
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	
+	}
+
+	/** 투두 전체 삭제 서비스
+	 * @param memberNo
+	 * @return
+	 */
+	public int deleteAll(int memberNo) throws Exception{
+		int result = 0;
+		
+		Connection conn = getConnection();
+		
+		result = dao.deleteAll(conn, memberNo);
+		
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	
 	}
 
 }

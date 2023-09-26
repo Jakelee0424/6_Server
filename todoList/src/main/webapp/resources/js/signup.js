@@ -31,7 +31,7 @@ checkInputPw.addEventListener("keyup", () => {
 
     if(inputPw.value.length == 0){
         checkInputPw.value = "";
-        alert("비밀번호를 입력해주세요")
+        alert("비밀번호를 입력해주세요");
         inputPw.focus();
     }
 
@@ -56,7 +56,6 @@ checkInputPw.addEventListener("keyup", () => {
     }
 
 });
-
 
 inputNickname.addEventListener("change", () => {
 
@@ -87,13 +86,22 @@ function validate(){
         }
     }
 
-    alert("회원가입 완료");
     return true;
 }
 
 
+function pwCheck(){
 
+    let pwForDelete = document.getElementById("pwForDelete");
+    let checkPwForDelete = document.getElementById("checkPwForDelete");
 
+    if((pwForDelete.value == checkPwForDelete.value) && pwForDelete.value.length != 0){
+        confirm("탈퇴를 진행하시겠습니까?");
+    }else{
+        alert("비밀번호를 잘못 입력하셨습니다.");
+        return false;
+    }
+}
 
 
 

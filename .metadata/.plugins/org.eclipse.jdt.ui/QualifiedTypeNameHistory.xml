@@ -30,16 +30,18 @@
     <fullyQualifiedTypeName name="edu.kh.member.model.dao.MemberDAO"/>
     <fullyQualifiedTypeName name="org.apache.jasper.compiler.Node.GetProperty"/>
     <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
-    <fullyQualifiedTypeName name="edu.kh.member.model.service.MemberService"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="edu.kh.todo.model.dao.TodoDAO"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
-    <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
-    <fullyQualifiedTypeName name="edu.kh.todo.model.service.TodoService"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="edu.kh.member.model.dto.Member"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
     <fullyQualifiedTypeName name="edu.kh.todo.model.dto.Todo"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="edu.kh.todo.controller.DeleteAllController"/>
+    <fullyQualifiedTypeName name="edu.kh.todo.model.service.TodoService"/>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="edu.kh.member.model.dto.Member"/>
+    <fullyQualifiedTypeName name="edu.kh.member.model.service.MemberService"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>

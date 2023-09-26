@@ -92,6 +92,24 @@ input{
 
 /* ---------------- 로그인 후 ---------------------------- */
 
+.todoTable{
+    border-spacing: 0px;
+}
+
+.todoTable tr, td, th{
+    text-align: center;
+    padding: 5px 20px;
+}
+
+.todoTable > th{
+    color: #800000;
+    font-weight: bold;
+}
+
+.todoBtn{
+    border: none;
+}
+
 #todolistTitle{
     margin-bottom: 20px;
     border: none;
@@ -109,7 +127,7 @@ input{
 }
 
 #insertBtn{
-    width: 40px;
+    width: 50px;
     height: 20px;
     background-color: green;
     color: white;
@@ -123,7 +141,7 @@ input{
 }
 
 #logoutBtn{
-    width: 40px;
+    width: 50px;
     height: 20px;
     background-color: #000;
     color: white;
@@ -157,6 +175,34 @@ input{
     color: white;
     text-decoration: none;
     border-radius: 2px;
+}
+
+#deleteAll{
+    width: 50px;
+    height: 20px;
+    background-color: #fb4444;
+    color: white;
+    cursor: pointer;
+    margin: 0 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+#deleteMem{
+    width: 50px;
+    height: 20px;
+    background-color: #a94bd1;
+    color: white;
+    cursor: pointer;
+    margin: 0 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 /* -------------- to do 등록하기 --------------------------------- */
@@ -206,4 +252,17 @@ input{
     color: #000;
     background-color: #cbcbcb;
     transition-duration: 0.5s;
+}
+
+/* -------------------회원 탈퇴 -------------------------------- */
+
+.pwCheckContainer{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin-top: 30px;
+}
+
+.pwCheckContainer > p {
+    margin-top: 20px;
 }

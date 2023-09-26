@@ -33,12 +33,13 @@ public class LoginController extends HttpServlet{
 
 			String inputId = req.getParameter("inputId");
 			String inputPw = req.getParameter("inputPw");
+			
+			HttpSession session = req.getSession();
 
 			Member member =  service.login(inputId, inputPw);
 	
-			HttpSession session = req.getSession();
-
 			if(member.getMemberNo() != 0) {
+
 				
 				List<Todo> list = new ArrayList<Todo>();
 				
@@ -48,13 +49,12 @@ public class LoginController extends HttpServlet{
 				
 				session.setAttribute("member", member);
 				session.setMaxInactiveInterval(60*60);
-
 				
 				resp.sendRedirect("/"); 
 
 			}else{
 
-				session.setAttribute("msg", "아이디 또는 비밀번호가 일치하지 않습니다.");
+				session.setAttribute("msg", "회원 정보가 존재하지 않습니다.");
 
 				String referer = req.getHeader("referer");
 

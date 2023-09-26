@@ -60,22 +60,44 @@
 
 			<span>
 				
-				<c:forEach var="todo" items="${list}">
-						<div class="todo-div">
-							${todo.todoTitle} (${todo.todoMemo}) 
-							${todo.todoDate} 
-						<a href="/update" id="updateBtn">수정</a>
-						<a href="/delete" id="deleteBtn">삭제</a>
-						</div>
 				
-				</c:forEach>
-	
+				<table class="todoTable">
+					<tr>
+						<th>번호</th>
+						<th>제목</th>
+						<th>할일</th>
+						<th>작성 일시</th>
+						<td style="display: none;"></td>
+						<td style="display: none;"></td>
+					</tr>
+					
+					<c:forEach var="todo" items="${list}" varStatus="vs">
+						<tr>
+							<td>${vs.count}</td>
+							<td>${todo.todoTitle}</td>
+							<td>${todo.todoMemo}</td>
+							<td>${todo.todoDate}</td>
+							<td class="todoBtn"><a href="/update?index=${vs.index}&todoNo=${todo.todoNo}" id="updateBtn">수정</a></td>
+							<td class="todoBtn"><a href="/delete?index=${vs.index}" id="deleteBtn">삭제</a></td>
+						</tr>
+						<!-- <div class="todo-div${vs.index}&todoNo=${todo.todoNo}">
+							${vs.count}. ${todo.todoTitle} (${todo.todoMemo}) 
+							${todo.todoDate}  
+							<a href="/update?index=${vs.index}&todoNo=${todo.todoNo}" id="updateBtn">수정</a>
+							<a href="/delete?index=${vs.index}" id="deleteBtn">삭제</a>
+						</div> -->
+						
+					</c:forEach>
+					
+				</table>
 			</span>
 
 			<div class="btn">
 
+				<a href="/deleteAll" id="deleteAll">전체&nbsp;삭제</a>
 				<a href="/insert" id="insertBtn">등록하기</a>
 				<a href="/logout" id="logoutBtn">로그아웃</a>
+				<a href="/deleteMem" id="deleteMem">회원&nbsp;탈퇴</a>
 
 			</div>
 

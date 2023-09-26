@@ -12,7 +12,7 @@ public class MemberService {
 	MemberDAO dao = new MemberDAO();
 	
 	
-	/** 회원가입 컨트롤러
+	/** 회원가입 서비스
 	 * @param inputId
 	 * @param inputPw
 	 * @param inputNickname
@@ -38,7 +38,7 @@ public class MemberService {
 		return result;
 	}
 
-	/** 로그인 컨트롤러
+	/** 로그인 서비스
 	 * @param inputId
 	 * @param inputPw
 	 * @return
@@ -55,6 +55,48 @@ public class MemberService {
 		close(conn);
 		
 		return member;
+	}
+	
+	/** 회원조회 서비스
+	 * @param inputId
+	 * @return
+	 * @throws Exception
+	 */
+	public Member select(String inputId) throws Exception{
+		
+		Member member = new Member();
+		
+		Connection conn = getConnection();
+		
+		member = dao.select(conn, inputId);
+		
+		close(conn);
+		
+		return member;
+	}
+
+	/** 회원탈퇴 서비스
+	 * @param memberNo
+	 * @param pwForDelete
+	 * @return
+	 */
+	public int deleteMem(int memberNo, String pwForDelete) throws Exception{
+
+		int result = 0;
+		
+		Connection conn = getConnection();
+		
+		result = dao.deleteMem(conn, memberNo, pwForDelete);
+
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
 	}
 
 }

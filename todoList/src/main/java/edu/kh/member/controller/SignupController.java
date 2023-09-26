@@ -33,28 +33,39 @@ public class SignupController extends HttpServlet{
 			String inputId = req.getParameter("inputId");
 			String inputPw = req.getParameter("inputPw");
 			String inputNickname = req.getParameter("inputNickname");
+			
+			// 조회 후 동일 아이디 존재하면 실패
+			Member checkMember =  new Member();
+			checkMember = service.select(inputId);
 
-			int result = service.signup(inputId, inputPw, inputNickname);
+			if(checkMember.getMemberId() == null) {
 
-			if(result > 0) {
+				// 가입 실행
+				int result = service.signup(inputId, inputPw, inputNickname);
 
-				Member member = service.login(inputId, inputPw);
-							
+				if(result > 0) {
+
+					Member member = service.login(inputId, inputPw);
+
+					HttpSession session = req.getSession();
+
+					session.setAttribute("member", member);
+					session.setMaxInactiveInterval(60*60);
+
+					req.getRequestDispatcher("/index.jsp").forward(req, resp);
+				} 
+
+			} else {
+
 				HttpSession session = req.getSession();
 				
-				session.setAttribute("member", member);
-				session.setMaxInactiveInterval(60*60);
-				
-				req.getRequestDispatcher("/index.jsp").forward(req, resp);
-				
-			} else {
-				
-				req.setAttribute("msg", "회원가입에 실패했습니다.");
-					
+				session.setAttribute("msg", "이미 존재하는 계정입니다.");
+
 				String referer = req.getHeader("referer");
 
 				resp.sendRedirect(referer);
-			}	
+
+			}
 
 		}catch(Exception e) {
 			e.printStackTrace();

@@ -40,6 +40,7 @@ public class InsertController extends HttpServlet{
 			
 			String todoTitle = req.getParameter("todoTitle");
 			String todoMemo = req.getParameter("todoMemo");
+			
 			int memberNo = member.getMemberNo();
 			
 			int result = service.insert(todoTitle, todoMemo, memberNo);

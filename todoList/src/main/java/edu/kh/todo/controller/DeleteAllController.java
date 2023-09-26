@@ -15,37 +15,33 @@ import edu.kh.member.model.dto.Member;
 import edu.kh.todo.model.dto.Todo;
 import edu.kh.todo.model.service.TodoService;
 
-@WebServlet("/delete")
-public class DeleteController extends HttpServlet{
+@WebServlet("/deleteAll")
+public class DeleteAllController extends HttpServlet {
 
 	TodoService service = new TodoService();
-
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		
 		try {
 
 			HttpSession session = req.getSession();
 			
-			List<Todo> list = (ArrayList<Todo>)session.getAttribute("list");
+			Member member = (Member)session.getAttribute("member");
 			
-			int index = Integer.parseInt(req.getParameter("index"));
+			int memberNo = member.getMemberNo();
 			
-			Todo todo = list.get(index);
-			int todoNo = todo.getTodoNo();
-			
-			int result = service.delete(todoNo);
+			int result = service.deleteAll(memberNo);
 
 			if(result > 0) {
 
-				session.setAttribute("msg", "삭제되었습니다.");
+				session.setAttribute("msg", "모두 삭제되었습니다.");
 				
-				Member member = (Member) session.getAttribute("member");
-				List<Todo> todolist = new ArrayList<Todo>();
+				List<Todo> list = new ArrayList<Todo>();
 				
-				todolist = service.select(member.getMemberNo());
-				
-				session.setAttribute("list", todolist);
+				list = service.select(member.getMemberNo());
+
+				session.setAttribute("list", list);
 				
 				resp.sendRedirect("/");
 			}
@@ -53,8 +49,7 @@ public class DeleteController extends HttpServlet{
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-
+	
 	}
-
+	
 }
-
