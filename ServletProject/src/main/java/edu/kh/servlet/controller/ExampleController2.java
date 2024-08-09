@@ -25,6 +25,7 @@ public class ExampleController2 extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		String test = "sonar";
 		//HttpServletRequest는 요청 데이터를 담은 객체
 
 		String orderer = req.getParameter("orderer");
